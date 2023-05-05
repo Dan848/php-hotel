@@ -133,24 +133,24 @@ else {
             <h2 class="mb-3 col-12">Hotel</h2>
             <div class="col py-4 px-3 bg-success">
                 <?php if ($filteredHotels) {?>
-                    <table class="table table-dark table-striped mb-0">
+                    <table class="table table-dark table-striped table-hover table-bordered border-success mb-0">
                         <thead>
                             <tr>
-                            <th scope="col">Voto</th>
-                            <th scope="col">Nome</th>
-                            <th scope="col">Descrizione</th>
-                            <th scope="col">Dal Centro</th>
-                            <th scope="col">Parcheggio</th>
+                            <th class="col-1 text-center" scope="col">Voto</th>
+                            <th class="col-auto" scope="col">Nome</th>
+                            <th class="col" scope="col">Descrizione</th>
+                            <th class="col-1" scope="col">Centro</th>
+                            <th class="col-1" scope="col">Parcheggio</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php foreach ($filteredHotels as $hotel) {?>
                                 <tr>
-                                    <th scope="row"><?php echo $hotel["vote"]?></th>
+                                    <th class="text-center" scope="row"><?php echo $hotel["vote"]?></th>
                                     <td><?php echo $hotel["name"]?></td>
                                     <td><?php echo $hotel["description"]?></td>
-                                    <td><?php echo $hotel["distance_to_center"] . "km"?></td>
-                                    <td>
+                                    <td class="text-end"><?php echo $hotel["distance_to_center"] . "km"?></td>
+                                    <td class="text-center">
                                         <?php
                                             if ($hotel["parking"]){echo "Si";}
                                             else {echo "No";}
