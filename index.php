@@ -44,7 +44,7 @@ if (!empty($_GET["vote"]) && !empty($_GET["parking"])) {
     $selVote = $_GET["vote"];
     $selParking = filter_input(INPUT_GET, "parking", FILTER_VALIDATE_BOOLEAN);
     foreach ($hotels as $hotel) {
-        if ($hotel["vote"] == $selVote && $hotel["parking"] == $selParking){
+        if ($hotel["vote"] >= $selVote && $hotel["parking"] == $selParking){
             $filteredHotels[] = $hotel;
         }
     };
@@ -52,7 +52,7 @@ if (!empty($_GET["vote"]) && !empty($_GET["parking"])) {
 elseif (!empty($_GET["vote"])) {
     $selVote = $_GET["vote"];
     foreach ($hotels as $hotel) {
-        if ($hotel["vote"] == $selVote){
+        if ($hotel["vote"] >= $selVote){
             $filteredHotels[] = $hotel;
         }
     };
